@@ -32,8 +32,9 @@ class LoginViewController: UIViewController {
                 print("login error code : \(code)")
                 print("login error: \(error.localizedDescription)")
             } else {
-                //home으로 이동
-                print("login success")
+                guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as? UITabBarController else { return }
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true, completion: nil)
             }
         }
     }

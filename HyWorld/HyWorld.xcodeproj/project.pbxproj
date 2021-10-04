@@ -16,6 +16,7 @@
 		C20BF96A270AD50100D474C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF969270AD50100D474C1 /* LoginViewController.swift */; };
 		C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */; };
 		C20BF96E270ADC8B00D474C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */; };
+		C224D486270B1B2E00F628CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C224D485270B1B2E00F628CB /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C20BF969270AD50100D474C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C224D485270B1B2E00F628CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			children = (
 				C20BF969270AD50100D474C1 /* LoginViewController.swift */,
 				C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */,
+				C224D485270B1B2E00F628CB /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C224D486270B1B2E00F628CB /* HomeViewController.swift in Sources */,
 				C20BF96A270AD50100D474C1 /* LoginViewController.swift in Sources */,
 				C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */,
 				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
