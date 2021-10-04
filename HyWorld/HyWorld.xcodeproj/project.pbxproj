@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F66E560715D65BF611F95EB /* Pods_HyWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */; };
+		C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF952270AD43C00D474C1 /* AppDelegate.swift */; };
+		C20BF955270AD43C00D474C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF954270AD43C00D474C1 /* SceneDelegate.swift */; };
+		C20BF95A270AD43C00D474C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20BF958270AD43C00D474C1 /* Main.storyboard */; };
+		C20BF95C270AD43D00D474C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20BF95B270AD43D00D474C1 /* Assets.xcassets */; };
+		C20BF95F270AD43D00D474C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C20BF95D270AD43D00D474C1 /* LaunchScreen.storyboard */; };
+		C20BF96A270AD50100D474C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF969270AD50100D474C1 /* LoginViewController.swift */; };
+		C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */; };
+		C20BF96E270ADC8B00D474C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		358F47F1FDBB7EF3494B8E1F /* Pods-HyWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyWorld.release.xcconfig"; path = "Target Support Files/Pods-HyWorld/Pods-HyWorld.release.xcconfig"; sourceTree = "<group>"; };
+		A8D33D7376B4D19F2E9181C2 /* Pods-HyWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyWorld.debug.xcconfig"; path = "Target Support Files/Pods-HyWorld/Pods-HyWorld.debug.xcconfig"; sourceTree = "<group>"; };
+		C20BF94F270AD43C00D474C1 /* HyWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20BF952270AD43C00D474C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C20BF954270AD43C00D474C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C20BF959270AD43C00D474C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C20BF95B270AD43D00D474C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C20BF95E270AD43D00D474C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C20BF960270AD43D00D474C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C20BF969270AD50100D474C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C20BF94C270AD43C00D474C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F66E560715D65BF611F95EB /* Pods_HyWorld.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02B267972AFAD45E195A2B4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8D33D7376B4D19F2E9181C2 /* Pods-HyWorld.debug.xcconfig */,
+				358F47F1FDBB7EF3494B8E1F /* Pods-HyWorld.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9FD18B64164DE1F715EE5917 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C20BF946270AD43C00D474C1 = {
+			isa = PBXGroup;
+			children = (
+				C20BF951270AD43C00D474C1 /* HyWorld */,
+				C20BF950270AD43C00D474C1 /* Products */,
+				02B267972AFAD45E195A2B4B /* Pods */,
+				9FD18B64164DE1F715EE5917 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C20BF950270AD43C00D474C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C20BF94F270AD43C00D474C1 /* HyWorld.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C20BF951270AD43C00D474C1 /* HyWorld */ = {
+			isa = PBXGroup;
+			children = (
+				C20BF968270AD46A00D474C1 /* Models */,
+				C20BF967270AD46100D474C1 /* Controllers */,
+				C20BF966270AD45B00D474C1 /* Views */,
+				C20BF952270AD43C00D474C1 /* AppDelegate.swift */,
+				C20BF954270AD43C00D474C1 /* SceneDelegate.swift */,
+				C20BF95B270AD43D00D474C1 /* Assets.xcassets */,
+				C20BF95D270AD43D00D474C1 /* LaunchScreen.storyboard */,
+				C20BF960270AD43D00D474C1 /* Info.plist */,
+				C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */,
+			);
+			path = HyWorld;
+			sourceTree = "<group>";
+		};
+		C20BF966270AD45B00D474C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C20BF958270AD43C00D474C1 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C20BF967270AD46100D474C1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C20BF969270AD50100D474C1 /* LoginViewController.swift */,
+				C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C20BF968270AD46A00D474C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C20BF94E270AD43C00D474C1 /* HyWorld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C20BF963270AD43D00D474C1 /* Build configuration list for PBXNativeTarget "HyWorld" */;
+			buildPhases = (
+				B8777F86A8E9B8D2CD9B4A55 /* [CP] Check Pods Manifest.lock */,
+				C20BF94B270AD43C00D474C1 /* Sources */,
+				C20BF94C270AD43C00D474C1 /* Frameworks */,
+				C20BF94D270AD43C00D474C1 /* Resources */,
+				88DE89B8CDEE975F62908790 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyWorld;
+			productName = HyWorld;
+			productReference = C20BF94F270AD43C00D474C1 /* HyWorld.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C20BF947270AD43C00D474C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					C20BF94E270AD43C00D474C1 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = C20BF94A270AD43C00D474C1 /* Build configuration list for PBXProject "HyWorld" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C20BF946270AD43C00D474C1;
+			productRefGroup = C20BF950270AD43C00D474C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C20BF94E270AD43C00D474C1 /* HyWorld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C20BF94D270AD43C00D474C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C20BF95F270AD43D00D474C1 /* LaunchScreen.storyboard in Resources */,
+				C20BF96E270ADC8B00D474C1 /* GoogleService-Info.plist in Resources */,
+				C20BF95C270AD43D00D474C1 /* Assets.xcassets in Resources */,
+				C20BF95A270AD43C00D474C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88DE89B8CDEE975F62908790 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyWorld/Pods-HyWorld-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyWorld/Pods-HyWorld-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HyWorld/Pods-HyWorld-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8777F86A8E9B8D2CD9B4A55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HyWorld-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C20BF94B270AD43C00D474C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C20BF96A270AD50100D474C1 /* LoginViewController.swift in Sources */,
+				C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */,
+				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
+				C20BF955270AD43C00D474C1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C20BF958270AD43C00D474C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C20BF959270AD43C00D474C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C20BF95D270AD43D00D474C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C20BF95E270AD43D00D474C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C20BF961270AD43D00D474C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C20BF962270AD43D00D474C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C20BF964270AD43D00D474C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8D33D7376B4D19F2E9181C2 /* Pods-HyWorld.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VXBP2UH8J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyWorld/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyomin.HyWorld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C20BF965270AD43D00D474C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 358F47F1FDBB7EF3494B8E1F /* Pods-HyWorld.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VXBP2UH8J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HyWorld/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyomin.HyWorld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C20BF94A270AD43C00D474C1 /* Build configuration list for PBXProject "HyWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C20BF961270AD43D00D474C1 /* Debug */,
+				C20BF962270AD43D00D474C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C20BF963270AD43D00D474C1 /* Build configuration list for PBXNativeTarget "HyWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C20BF964270AD43D00D474C1 /* Debug */,
+				C20BF965270AD43D00D474C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C20BF947270AD43C00D474C1 /* Project object */;
+}
