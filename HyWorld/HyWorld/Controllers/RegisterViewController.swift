@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class RegisterViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     
     @IBOutlet weak var registerButton: UIButton!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +40,25 @@ class RegisterViewController: UIViewController {
                 if let error = error {
                     print("register error \(error)")
                 } else {
+                    // firestore에 user 정보 저장
+                    let uid = Auth.auth().currentUser?.uid ?? ""
+                    self.userInit(uid: uid, nickname: nickname)
                     self.navigationController?.popViewController(animated: true)
                 }
             }
         }
     }
-    
+}
+
+//MARK: - Firestore
+extension RegisterViewController {
+    private func userInit(uid: String, nickname: String) {
+        db.collection("users").document(uid).setData(["nickname": nickname]){ error in
+            if let error = error {
+                print("Fail to store nickname, \(error)")
+            } else {
+                print("Success to store nickname")
+            }
+        }
+    }
 }
