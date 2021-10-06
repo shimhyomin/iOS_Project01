@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -29,7 +28,7 @@ class HomeViewController: UIViewController {
                     print("Document data was empty.")
                     return
                 }
-                print("Current user data \(data)")
+                self.homeLabel.text = "\(data)"
             }
     }
     
