@@ -101,7 +101,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KXJ-2P-REX">
-                                <rect key="frame" x="20" y="668" width="374" height="110"/>
+                                <rect key="frame" x="20" y="727" width="374" height="110"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnc-xw-7fO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -140,7 +140,6 @@
                         <constraints>
                             <constraint firstItem="KXJ-2P-REX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Rt-Ev-wbt"/>
                             <constraint firstItem="GKb-OS-UeI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Db-pX-ijM"/>
-                            <constraint firstItem="KXJ-2P-REX" firstAttribute="top" secondItem="uoA-tw-fxL" secondAttribute="bottom" constant="50" id="7Yr-DA-qNJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TEE-Hv-PGa" secondAttribute="trailing" constant="20" id="Bxh-V0-Fce"/>
                             <constraint firstItem="uoA-tw-fxL" firstAttribute="top" secondItem="TEE-Hv-PGa" secondAttribute="bottom" constant="10" id="FlU-o4-hIw"/>
                             <constraint firstItem="TEE-Hv-PGa" firstAttribute="top" secondItem="xcj-lY-DBG" secondAttribute="bottom" constant="20" id="Ft2-Sy-t5e"/>
@@ -150,6 +149,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KXJ-2P-REX" secondAttribute="trailing" constant="20" id="dXo-w9-Lrq"/>
                             <constraint firstItem="xcj-lY-DBG" firstAttribute="top" secondItem="GKb-OS-UeI" secondAttribute="bottom" constant="10" id="gP9-6m-3ka"/>
                             <constraint firstItem="GKb-OS-UeI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="hXN-KL-osW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KXJ-2P-REX" secondAttribute="bottom" constant="25" id="tKG-ed-rQo"/>
                             <constraint firstItem="xcj-lY-DBG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xt1-kc-EMf"/>
                         </constraints>
                     </view>
@@ -194,7 +194,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1S5-1S-fzt">
-                                <rect key="frame" x="20" y="258.5" width="374" height="70.5"/>
+                                <rect key="frame" x="20" y="238.5" width="374" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLo-e0-D8N">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="20.5"/>
@@ -216,7 +216,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ChO-gl-t4F">
-                                <rect key="frame" x="20" y="379" width="374" height="70.5"/>
+                                <rect key="frame" x="20" y="339" width="374" height="70.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-Zb-WMQ">
                                         <rect key="frame" x="0.0" y="0.0" width="151.5" height="20.5"/>
@@ -238,7 +238,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3h9-eB-gvu">
-                                <rect key="frame" x="20" y="499.5" width="374" height="76.5"/>
+                                <rect key="frame" x="20" y="439.5" width="374" height="76.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 다시 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-Bw-inp">
                                         <rect key="frame" x="0.0" y="0.0" width="185.5" height="20.5"/>
@@ -260,7 +260,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79K-2g-E7X">
-                                <rect key="frame" x="132" y="646" width="150" height="40"/>
+                                <rect key="frame" x="132" y="722" width="150" height="40"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="6L1-Nq-3IL"/>
@@ -280,16 +280,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fOW-gI-M2l" firstAttribute="leading" secondItem="tFU-xA-s8e" secondAttribute="leading" constant="20" id="21s-XC-S6Y"/>
+                            <constraint firstItem="tFU-xA-s8e" firstAttribute="bottom" secondItem="79K-2g-E7X" secondAttribute="bottom" constant="100" id="ACO-bm-nnw"/>
                             <constraint firstItem="tFU-xA-s8e" firstAttribute="trailing" secondItem="fOW-gI-M2l" secondAttribute="trailing" constant="20" id="Bf6-GL-dDU"/>
                             <constraint firstItem="ChO-gl-t4F" firstAttribute="leading" secondItem="tFU-xA-s8e" secondAttribute="leading" constant="20" id="CZV-uF-Sc8"/>
-                            <constraint firstItem="3h9-eB-gvu" firstAttribute="top" secondItem="ChO-gl-t4F" secondAttribute="bottom" constant="50" id="TNi-Rg-sRp"/>
-                            <constraint firstItem="1S5-1S-fzt" firstAttribute="top" secondItem="fOW-gI-M2l" secondAttribute="bottom" constant="50" id="To1-d8-7fs"/>
+                            <constraint firstItem="3h9-eB-gvu" firstAttribute="top" secondItem="ChO-gl-t4F" secondAttribute="bottom" constant="30" id="TNi-Rg-sRp"/>
+                            <constraint firstItem="1S5-1S-fzt" firstAttribute="top" secondItem="fOW-gI-M2l" secondAttribute="bottom" constant="30" id="To1-d8-7fs"/>
                             <constraint firstItem="1S5-1S-fzt" firstAttribute="leading" secondItem="tFU-xA-s8e" secondAttribute="leading" constant="20" id="V1b-MF-bTK"/>
                             <constraint firstItem="tFU-xA-s8e" firstAttribute="trailing" secondItem="ChO-gl-t4F" secondAttribute="trailing" constant="20" id="Y4S-cO-hhp"/>
                             <constraint firstItem="tFU-xA-s8e" firstAttribute="trailing" secondItem="3h9-eB-gvu" secondAttribute="trailing" constant="20" id="bbf-e3-wa4"/>
-                            <constraint firstItem="79K-2g-E7X" firstAttribute="top" secondItem="3h9-eB-gvu" secondAttribute="bottom" constant="70" id="cpd-Tz-WNj"/>
                             <constraint firstItem="tFU-xA-s8e" firstAttribute="trailing" secondItem="1S5-1S-fzt" secondAttribute="trailing" constant="20" id="dQM-W4-ehn"/>
-                            <constraint firstItem="ChO-gl-t4F" firstAttribute="top" secondItem="1S5-1S-fzt" secondAttribute="bottom" constant="50" id="tMe-8u-NXk"/>
+                            <constraint firstItem="ChO-gl-t4F" firstAttribute="top" secondItem="1S5-1S-fzt" secondAttribute="bottom" constant="30" id="tMe-8u-NXk"/>
                             <constraint firstItem="79K-2g-E7X" firstAttribute="centerX" secondItem="tkL-qf-cYY" secondAttribute="centerX" id="tU3-um-5R3"/>
                             <constraint firstItem="3h9-eB-gvu" firstAttribute="leading" secondItem="tFU-xA-s8e" secondAttribute="leading" constant="20" id="xAt-0w-PBS"/>
                             <constraint firstItem="fOW-gI-M2l" firstAttribute="top" secondItem="tFU-xA-s8e" secondAttribute="top" constant="50" id="zaS-Me-xyc"/>
@@ -528,7 +528,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="Brp-a4-CaY">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="453" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
