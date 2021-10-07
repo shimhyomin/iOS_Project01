@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     
     let db = Firestore.firestore()
+    let userManager = UserManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,22 +43,9 @@ class RegisterViewController: UIViewController {
                 } else {
                     // firestore에 user 정보 저장
                     let uid = Auth.auth().currentUser?.uid ?? ""
-                    self.userInit(uid: uid, nickname: nickname)
+                    self.userManager.registerUser(withUID: uid, nickname: nickname)
                     self.navigationController?.popViewController(animated: true)
                 }
-            }
-        }
-    }
-}
-
-//MARK: - Firestore
-extension RegisterViewController {
-    private func userInit(uid: String, nickname: String) {
-        db.collection("users").document(uid).setData(["nickname": nickname]){ error in
-            if let error = error {
-                print("Fail to store nickname, \(error)")
-            } else {
-                print("Success to store nickname")
             }
         }
     }
