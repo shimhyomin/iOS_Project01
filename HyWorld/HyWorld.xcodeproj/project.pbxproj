@@ -18,6 +18,7 @@
 		C20BF96E270ADC8B00D474C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */; };
 		C20E2E6A270DA9AB0089A293 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E2E69270DA9AB0089A293 /* UserManager.swift */; };
 		C224D486270B1B2E00F628CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C224D485270B1B2E00F628CB /* HomeViewController.swift */; };
+		C22D115F27102FBC0084F4AC /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22D115E27102FBC0084F4AC /* FindViewController.swift */; };
 		C29DDA86270C1CE900ED8EB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DDA85270C1CE900ED8EB5 /* User.swift */; };
 		C29DDA88270C23A200ED8EB5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		C20E2E69270DA9AB0089A293 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		C20E2E6B270DBAD00089A293 /* HyWorld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HyWorld.entitlements; sourceTree = "<group>"; };
 		C224D485270B1B2E00F628CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C22D115E27102FBC0084F4AC /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		C29DDA85270C1CE900ED8EB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				C20BF96B270ADA6100D474C1 /* RegisterViewController.swift */,
 				C224D485270B1B2E00F628CB /* HomeViewController.swift */,
 				C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */,
+				C22D115E27102FBC0084F4AC /* FindViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				C20BF96A270AD50100D474C1 /* LoginViewController.swift in Sources */,
 				C29DDA86270C1CE900ED8EB5 /* User.swift in Sources */,
 				C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */,
+				C22D115F27102FBC0084F4AC /* FindViewController.swift in Sources */,
 				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
 				C20E2E6A270DA9AB0089A293 /* UserManager.swift in Sources */,
 				C20BF955270AD43C00D474C1 /* SceneDelegate.swift in Sources */,

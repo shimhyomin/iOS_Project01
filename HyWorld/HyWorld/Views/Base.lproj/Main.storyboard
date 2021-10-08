@@ -325,8 +325,8 @@
                         <segue destination="KTa-p6-hib" kind="relationship" relationship="viewControllers" id="Grk-zg-frW"/>
                         <segue destination="qbc-M2-YB1" kind="relationship" relationship="viewControllers" id="rN4-NS-gMK"/>
                         <segue destination="FGc-02-Z8K" kind="relationship" relationship="viewControllers" id="dwh-18-nbh"/>
-                        <segue destination="IzQ-GZ-usq" kind="relationship" relationship="viewControllers" id="qr2-iG-12d"/>
-                        <segue destination="shv-Op-Hfs" kind="relationship" relationship="viewControllers" id="BAq-8L-OiF"/>
+                        <segue destination="f6h-Lf-qno" kind="relationship" relationship="viewControllers" id="1Fc-c3-0n7"/>
+                        <segue destination="shv-Op-Hfs" kind="relationship" relationship="viewControllers" id="awv-1x-OZ9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfN-l1-daB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -503,55 +503,39 @@
             <point key="canvasLocation" x="2858" y="1012"/>
         </scene>
         <!--친구찾기-->
-        <scene sceneID="39I-Mg-YYD">
+        <scene sceneID="Sq1-tn-iGg">
             <objects>
-                <navigationController id="IzQ-GZ-usq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="친구찾기" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="G2n-v4-jNe"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mll-Ej-4H4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="7aa-ey-RmT" kind="relationship" relationship="rootViewController" id="vM6-ic-aIz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cAT-Dn-Uco" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2187" y="1677"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="iuW-6X-MdB">
-            <objects>
-                <tableViewController id="7aa-ey-RmT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cx0-4f-vHh">
+                <tableViewController id="f6h-Lf-qno" customClass="FindViewController" customModule="HyWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="WeJ-l2-2S0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Brp-a4-CaY">
-                            <rect key="frame" x="0.0" y="0.0" width="453" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="2gz-A7-ikd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nch-zN-3Yl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FirendCell" id="8Wl-nY-SOZ">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nch-zN-3Yl" id="zMQ-pd-gTq">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Wl-nY-SOZ" id="wOy-3D-84W">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="7aa-ey-RmT" id="2i5-n3-cPq"/>
-                            <outlet property="delegate" destination="7aa-ey-RmT" id="uqx-Zb-X9n"/>
+                            <outlet property="dataSource" destination="f6h-Lf-qno" id="EhB-la-LkF"/>
+                            <outlet property="delegate" destination="f6h-Lf-qno" id="hai-Fn-g4r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WuG-pa-yQ9"/>
+                    <tabBarItem key="tabBarItem" title="친구찾기" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="wRZ-FA-mYP"/>
+                    <navigationItem key="navigationItem" id="kxw-LR-vGg"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vpk-8q-nUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zf6-ho-MKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2858" y="1677"/>
+            <point key="canvasLocation" x="2187" y="1689"/>
         </scene>
         <!--설정-->
         <scene sceneID="zpF-S0-Ucd">
