@@ -27,25 +27,22 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        let nickname = nicknameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let passwordConfirm = passwordConfirmTextField.text ?? ""
         
-        if nickname == "" {
-            print("nickname empty")
-        } else if password != passwordConfirm {
-            print("password not confirm")
-        } else {
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let error = error {
-                    print("register error \(error)")
-                } else {
-                    // firestore에 user 정보 저장
-                    let uid = Auth.auth().currentUser?.uid ?? ""
-                    self.userManager.registerUser(withUID: uid, nickname: nickname)
-                    self.navigationController?.popViewController(animated: true)
-                }
+        guard let nickname = nicknameTextField.text else { return }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let passwordConfirm = passwordConfirmTextField.text else { return }
+        if password != passwordConfirm { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                print("Fail to Firebase Create User, \(error)")
+            } else {
+                //createUser 성공
+                guard let uid = Auth.auth().currentUser?.uid else { print("Fail to get currentUser's uid"); return }
+                let user = User(email: email, nickname: nickname)
+                self.userManager.registerUser(withUID: uid, user: user)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
