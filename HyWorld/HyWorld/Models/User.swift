@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct User {
-    let email: String
-    let nickname: String
-    let profileURL: String = ""
-    let discription: String = ""
+struct User: Codable {
+    var uid: String
+    var email: String
+    var nickname: String
+    var profileURL: String = ""
+    var discription: String = ""
 }

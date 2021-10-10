@@ -12,7 +12,7 @@ class FindViewController: UITableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var friendList: [String] = []
+    var friendList: [User] = []
     
     let db = Firestore.firestore()
     
@@ -33,24 +33,34 @@ class FindViewController: UITableViewController {
     
     private func loadFirends() {
         db.collection("users").addSnapshotListener { querySnapshot, error in
-            self.friendList = []
-            
             if let error = error {
                 print("Fail retrieving data from Firestore, \(error)")
             } else {
-                if let document = querySnapshot?.documents {
-                    print("document \(document)")
-                    for doc in document {
-                        print("data \(doc.data())")
-                        print("data type \(type(of: doc.data()))")
-                        
-                        self.friendList.append("friend \(doc.data())")
-                        
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                
+                if let documents = querySnapshot?.documents {
+                    self.friendList = documents.compactMap({ doc -> User? in
+                        do {
+                            let jsonData = try JSONSerialization.data(withJSONObject: doc.data(), options: [])
+                            let user = try JSONDecoder().decode(User.self, from: jsonData)
+                            return user
+                        } catch let error {
+                            print("Fail JSON Parsing, \(error)")
+                            return nil
                         }
+                    })
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
                 }
+                
+//                if let document = querySnapshot?.documents {
+//                    for doc in document {
+//                        self.friendList.append("friend \(doc.data())")
+//                        DispatchQueue.main.async {
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                }
             }
             
         }
@@ -63,7 +73,7 @@ class FindViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FirendCell", for: indexPath)
-        cell.textLabel?.text = friendList[indexPath.row]
+        cell.textLabel?.text = friendList[indexPath.row].nickname
         return cell
     }
     
@@ -71,6 +81,7 @@ class FindViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChattingViewController") as? ChattingViewController else { return }
+        
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -79,7 +90,7 @@ class FindViewController: UITableViewController {
 //MARK: - UISearchBarDelegate
 extension FindViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        // todo
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

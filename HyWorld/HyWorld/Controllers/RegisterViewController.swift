@@ -40,8 +40,8 @@ class RegisterViewController: UIViewController {
             } else {
                 //createUser 성공
                 guard let uid = Auth.auth().currentUser?.uid else { print("Fail to get currentUser's uid"); return }
-                let user = User(email: email, nickname: nickname)
-                self.userManager.registerUser(withUID: uid, user: user)
+                let user = User(uid: uid, email: email, nickname: nickname)
+                self.userManager.registerUser(user: user)
                 self.navigationController?.popViewController(animated: true)
             }
         }
