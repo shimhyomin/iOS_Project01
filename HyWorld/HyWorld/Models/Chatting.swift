@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Chatting {
+struct Chatting: Codable {
     let senderUID: String
     let recipientUID: String
     let message: String
-    //let timestamp: Date
 }

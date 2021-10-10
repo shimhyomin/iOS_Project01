@@ -16,9 +16,11 @@ struct ChattingManager {
         let sender = chatting.senderUID
         let recipient = chatting.recipientUID
         let message = chatting.message
+        let date = Date().timeIntervalSinceReferenceDate
+        db.collection("chatting").document(sender).collection(recipient).addDocument(data:["senderUID": sender, "recipientUID": recipient,"message": message, "date": date])
         
-        db.collection("chatting").document(sender).collection(recipient).addDocument(data: ["senderUID": sender, "recipientUID": recipient,"message": message])
-        
-        db.collection("chatting").document(recipient).collection(sender).addDocument(data: ["senderUID": sender, "recipientUID": recipient,"message": message])
+        if sender != recipient {
+            db.collection("chatting").document(recipient).collection(sender).addDocument(data: ["senderUID": sender, "recipientUID": recipient,"message": message, "date": date])
+        }
     }
 }

@@ -20,6 +20,7 @@
 		C2220D252711A46200D29BAA /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2220D242711A46200D29BAA /* ChattingViewController.swift */; };
 		C224D486270B1B2E00F628CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C224D485270B1B2E00F628CB /* HomeViewController.swift */; };
 		C22D115F27102FBC0084F4AC /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22D115E27102FBC0084F4AC /* FindViewController.swift */; };
+		C28907AA27132F2D00F3760A /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28907A927132F2D00F3760A /* ChatListViewController.swift */; };
 		C29DDA86270C1CE900ED8EB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DDA85270C1CE900ED8EB5 /* User.swift */; };
 		C29DDA88270C23A200ED8EB5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */; };
 		C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E296FA2712EBDB004B3B52 /* Chatting.swift */; };
@@ -44,6 +45,7 @@
 		C2220D242711A46200D29BAA /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		C224D485270B1B2E00F628CB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C22D115E27102FBC0084F4AC /* FindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		C28907A927132F2D00F3760A /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		C29DDA85270C1CE900ED8EB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		C2E296FA2712EBDB004B3B52 /* Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatting.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */,
 				C22D115E27102FBC0084F4AC /* FindViewController.swift */,
 				C2220D242711A46200D29BAA /* ChattingViewController.swift */,
+				C28907A927132F2D00F3760A /* ChatListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
 				C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */,
 				C20E2E6A270DA9AB0089A293 /* UserManager.swift in Sources */,
+				C28907AA27132F2D00F3760A /* ChatListViewController.swift in Sources */,
 				C20BF955270AD43C00D474C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

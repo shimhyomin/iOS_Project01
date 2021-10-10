@@ -53,7 +53,6 @@ class FindViewController: UITableViewController {
                     }
                 }
             }
-            
         }
     }
     
