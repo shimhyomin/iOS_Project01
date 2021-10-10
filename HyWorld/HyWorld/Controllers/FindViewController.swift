@@ -52,15 +52,6 @@ class FindViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }
-                
-//                if let document = querySnapshot?.documents {
-//                    for doc in document {
-//                        self.friendList.append("friend \(doc.data())")
-//                        DispatchQueue.main.async {
-//                            self.tableView.reloadData()
-//                        }
-//                    }
-//                }
             }
             
         }
@@ -81,6 +72,8 @@ class FindViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChattingViewController") as? ChattingViewController else { return }
+        
+        viewController.opponent = friendList[indexPath.row]
         
         navigationController?.pushViewController(viewController, animated: true)
     }

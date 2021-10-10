@@ -433,6 +433,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-H9-Qph">
                                 <rect key="frame" x="0.0" y="88" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="u33-oy-J5t" id="wpF-mZ-hfn"/>
+                                    <outlet property="delegate" destination="u33-oy-J5t" id="acz-wL-l2Q"/>
+                                    <outlet property="prefetchDataSource" destination="u33-oy-J5t" id="Mnl-Qh-YjG"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0z-dJ-5js">
                                 <rect key="frame" x="0.0" y="796" width="414" height="100"/>
@@ -451,6 +456,9 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="u33-oy-J5t" eventType="touchUpInside" id="lGu-re-UIi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="linkColor"/>
@@ -472,6 +480,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="nickname" id="WLa-aY-6Y1"/>
+                    <connections>
+                        <outlet property="messageTextView" destination="1so-Mo-E8g" id="wVN-wY-lmc"/>
+                        <outlet property="sendButton" destination="Q0B-v3-Yra" id="Rrq-Ym-wOL"/>
+                        <outlet property="tableView" destination="PFv-H9-Qph" id="Pe3-IX-i1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNE-rp-5kh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

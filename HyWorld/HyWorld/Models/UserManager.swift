@@ -10,9 +10,9 @@ import Firebase
 
 struct UserManager {
     
+    let db = Firestore.firestore()
+    
     func registerUser(user: User) {
-        let db = Firestore.firestore()
-        
         db.collection("users").document(user.uid).setData(
             ["uid": user.uid,
              "email": user.email,
