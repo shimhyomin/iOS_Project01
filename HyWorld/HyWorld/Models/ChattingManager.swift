@@ -12,15 +12,34 @@ struct ChattingManager {
     
     let db = Firestore.firestore()
     
-    func sendMessage(chatting: Chatting) {
-        let sender = chatting.senderUID
-        let recipient = chatting.recipientUID
-        let message = chatting.message
-        let date = Date().timeIntervalSinceReferenceDate
-        db.collection("chatting").document(sender).collection(recipient).addDocument(data:["senderUID": sender, "recipientUID": recipient,"message": message, "date": date])
+    func sendMessage(chattingRoom: ChattingRoom, message: Message) {
+        //현재는 1:1 채팅만을 고려한다.
+        //chattingRoom.roomID에는 opponent의 uid 값을 가져온다.
         
-        if sender != recipient {
-            db.collection("chatting").document(recipient).collection(sender).addDocument(data: ["senderUID": sender, "recipientUID": recipient,"message": message, "date": date])
+        guard let currentUser = Auth.auth().currentUser else { return }
+        
+        for memberUID in chattingRoom.memebersUID {
+            var roomID = chattingRoom.roomID
+            if memberUID != currentUser.uid {
+                roomID = currentUser.uid
+            }
+            
+            let chattingRoomRef = db.collection("chatting").document(memberUID).collection("chattingRoom").document(roomID)
+            chattingRoomRef.setData([
+                "roomID": roomID,
+                "membersUID": chattingRoom.memebersUID,
+                "lastMessage": chattingRoom.lastMessage,
+                "timestamp": chattingRoom.timestamp
+            ])
+            let messageID = chattingRoomRef.collection("messages").addDocument(data: [
+                "messageID": "",
+                "senderID": message.senderUID,
+                "content": message.content,
+                "timestamp": message.timestamp
+            ]).documentID
+            chattingRoomRef.collection("messages").document(messageID).updateData([
+                "messageID": messageID
+            ])
         }
     }
 }

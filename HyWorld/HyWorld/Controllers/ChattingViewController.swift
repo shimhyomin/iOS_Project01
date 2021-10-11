@@ -18,7 +18,7 @@ class ChattingViewController: UIViewController {
     let currentUser = Auth.auth().currentUser
     var opponent: User?
     let chattingManager = ChattingManager()
-    var chattingList: [Chatting] = []
+    var chattingList: [Message] = []
     
     let db = Firestore.firestore()
     
@@ -35,6 +35,7 @@ class ChattingViewController: UIViewController {
         tableView.delegate = self
         
         //chatting list 가져오기
+        /*
         db.collection("chatting").document(currentUser!.uid).collection(opponent!.uid).order(by: "date").addSnapshotListener { querySnapshot, error in
             
             if let error = error {
@@ -57,13 +58,18 @@ class ChattingViewController: UIViewController {
                 }
             }
         }
+         */
         
     }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
-        guard let message = messageTextView.text else { return }
-        let chatting = Chatting(senderUID: currentUser!.uid, recipientUID: opponent!.uid, message: message)
-        chattingManager.sendMessage(chatting: chatting)
+        guard let content = messageTextView.text else { return }
+        let date = Date().timeIntervalSince1970
+//        let chatting = Chatting(senderUID: currentUser!.uid, recipientUID: opponent!.uid, message: message)
+//        chattingManager.sendMessage(chatting: chatting)
+        let chattingRoom = ChattingRoom(roomID: opponent!.uid, memebersUID: [currentUser!.uid, opponent!.uid], lastMessage: content, timestamp: date)
+        let message = Message(messageID: opponent!.uid, senderUID: currentUser!.uid, content: content, timestamp: date)
+        chattingManager.sendMessage(chattingRoom: chattingRoom, message: message)
     }
 }
 
@@ -76,7 +82,7 @@ extension ChattingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chatting = chattingList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath)
-        cell.textLabel?.text = chatting.message
+        //cell.textLabel?.text = chatting.message
         return cell
     }
     
