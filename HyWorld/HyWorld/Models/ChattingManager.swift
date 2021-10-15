@@ -18,7 +18,7 @@ struct ChattingManager {
         
         guard let currentUser = Auth.auth().currentUser else { return }
         
-        for memberUID in chattingRoom.memebersUID {
+        for memberUID in chattingRoom.membersUID {
             var roomID = chattingRoom.roomID
             if memberUID != currentUser.uid {
                 roomID = currentUser.uid
@@ -27,7 +27,7 @@ struct ChattingManager {
             let chattingRoomRef = db.collection("chatting").document(memberUID).collection("chattingRoom").document(roomID)
             chattingRoomRef.setData([
                 "roomID": roomID,
-                "membersUID": chattingRoom.memebersUID,
+                "membersUID": chattingRoom.membersUID,
                 "lastMessage": chattingRoom.lastMessage,
                 "timestamp": chattingRoom.timestamp
             ])

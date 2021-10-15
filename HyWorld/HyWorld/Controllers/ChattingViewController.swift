@@ -64,7 +64,7 @@ class ChattingViewController: UIViewController {
         let date = Date().timeIntervalSince1970
         let member = currentUser?.uid == opponent?.uid ? [currentUser!.uid] : [currentUser!.uid, opponent!.uid]
         
-        let chattingRoom = ChattingRoom(roomID: opponent!.uid, memebersUID: member, lastMessage: content, timestamp: date)
+        let chattingRoom = ChattingRoom(roomID: opponent!.uid, membersUID: member, lastMessage: content, timestamp: date)
         
         let message = Message(messageID: opponent!.uid, senderUID: currentUser!.uid, content: content, timestamp: date)
         

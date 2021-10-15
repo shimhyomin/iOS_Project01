@@ -9,7 +9,7 @@ import Foundation
 
 struct ChattingRoom: Codable {
     let roomID: String
-    let memebersUID: [String]
+    let membersUID: [String]
     let lastMessage: String
     let timestamp: TimeInterval
 }

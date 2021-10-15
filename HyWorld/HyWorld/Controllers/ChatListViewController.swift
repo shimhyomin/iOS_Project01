@@ -54,7 +54,7 @@ extension ChatListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chattingRoom = chatList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell", for: indexPath)
-        cell.textLabel?.text = chattingRoom.lastMessage
+        cell.textLabel?.text = chattingRoom.membersUID.last
         return cell
     }
 }
