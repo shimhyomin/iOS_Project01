@@ -62,8 +62,9 @@ class ChattingViewController: UIViewController {
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         guard let content = messageTextView.text else { return }
         let date = Date().timeIntervalSince1970
-
-        let chattingRoom = ChattingRoom(roomID: opponent!.uid, memebersUID: [currentUser!.uid, opponent!.uid], lastMessage: content, timestamp: date)
+        let member = currentUser?.uid == opponent?.uid ? [currentUser!.uid] : [currentUser!.uid, opponent!.uid]
+        
+        let chattingRoom = ChattingRoom(roomID: opponent!.uid, memebersUID: member, lastMessage: content, timestamp: date)
         
         let message = Message(messageID: opponent!.uid, senderUID: currentUser!.uid, content: content, timestamp: date)
         

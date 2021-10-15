@@ -33,7 +33,7 @@ struct ChattingManager {
             ])
             let messageID = chattingRoomRef.collection("messages").addDocument(data: [
                 "messageID": "",
-                "senderID": message.senderUID,
+                "senderUID": message.senderUID,
                 "content": message.content,
                 "timestamp": message.timestamp
             ]).documentID
