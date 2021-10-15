@@ -7,12 +7,6 @@
 
 import Foundation
 
-//struct Chatting: Codable {
-//    let senderUID: String
-//    let recipientUID: String
-//    let message: String
-//}
-
 struct ChattingRoom: Codable {
     let roomID: String
     let memebersUID: [String]

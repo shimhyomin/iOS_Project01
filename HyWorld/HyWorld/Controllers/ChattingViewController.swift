@@ -18,7 +18,7 @@ class ChattingViewController: UIViewController {
     let currentUser = Auth.auth().currentUser
     var opponent: User?
     let chattingManager = ChattingManager()
-    var chattingList: [Message] = []
+    var messageList: [Message] = []
     
     let db = Firestore.firestore()
     
@@ -34,19 +34,17 @@ class ChattingViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //chatting list 가져오기
-        /*
-        db.collection("chatting").document(currentUser!.uid).collection(opponent!.uid).order(by: "date").addSnapshotListener { querySnapshot, error in
-            
+        //message list 가져오기
+        db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").document(opponent!.uid).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
             if let error = error {
-                print("Fail to retrieving chatting data from Firestore, \(error)")
+                print("Fail to get messages, \(error)")
             } else {
                 if let documents = querySnapshot?.documents {
-                    self.chattingList = documents.compactMap({ doc -> Chatting? in
+                    self.messageList = documents.compactMap({ doc -> Message? in
                         do {
                             let jsonData = try JSONSerialization.data(withJSONObject: doc.data(), options: [])
-                            let chatting = try JSONDecoder().decode(Chatting.self, from: jsonData)
-                            return chatting
+                            let message = try JSONDecoder().decode(Message.self, from: jsonData)
+                            return message
                         } catch let error {
                             print("Fail JSON Parsing, \(error)")
                             return nil
@@ -58,17 +56,17 @@ class ChattingViewController: UIViewController {
                 }
             }
         }
-         */
         
     }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         guard let content = messageTextView.text else { return }
         let date = Date().timeIntervalSince1970
-//        let chatting = Chatting(senderUID: currentUser!.uid, recipientUID: opponent!.uid, message: message)
-//        chattingManager.sendMessage(chatting: chatting)
+
         let chattingRoom = ChattingRoom(roomID: opponent!.uid, memebersUID: [currentUser!.uid, opponent!.uid], lastMessage: content, timestamp: date)
+        
         let message = Message(messageID: opponent!.uid, senderUID: currentUser!.uid, content: content, timestamp: date)
+        
         chattingManager.sendMessage(chattingRoom: chattingRoom, message: message)
     }
 }
@@ -76,13 +74,13 @@ class ChattingViewController: UIViewController {
 //MARK: - TableView
 extension ChattingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chattingList.count
+        return messageList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chatting = chattingList[indexPath.row]
+        let message = messageList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath)
-        //cell.textLabel?.text = chatting.message
+        cell.textLabel?.text = message.content
         return cell
     }
     
