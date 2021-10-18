@@ -12,9 +12,12 @@ struct ChattingManager {
     
     let db = Firestore.firestore()
     
+    //!!!path는 constant로 만들어서 관리하기!!!
+    
     func sendMessage(chattingRoom: ChattingRoom, message: Message) {
         //현재는 1:1 채팅만을 고려한다.
         //chattingRoom.roomID에는 opponent의 uid 값을 가져온다.
+        //!!!다시 정리할 필요가 있을 것 같다!!!
         
         guard let currentUser = Auth.auth().currentUser else { return }
         

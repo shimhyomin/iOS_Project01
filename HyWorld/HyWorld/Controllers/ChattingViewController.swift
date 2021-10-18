@@ -17,6 +17,7 @@ class ChattingViewController: UIViewController {
     
     let currentUser = Auth.auth().currentUser
     var opponent: User?
+    var opponentUID: String = ""
     let chattingManager = ChattingManager()
     var messageList: [Message] = []
     
@@ -35,7 +36,7 @@ class ChattingViewController: UIViewController {
         tableView.delegate = self
         
         //message list 가져오기
-        db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").document(opponent!.uid).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
+        db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").document(opponentUID).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Fail to get messages, \(error)")
             } else {
@@ -62,11 +63,11 @@ class ChattingViewController: UIViewController {
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         guard let content = messageTextView.text else { return }
         let date = Date().timeIntervalSince1970
-        let member = currentUser?.uid == opponent?.uid ? [currentUser!.uid] : [currentUser!.uid, opponent!.uid]
+        let member = currentUser?.uid == opponent?.uid ? [currentUser!.uid] : [currentUser!.uid, opponentUID]
         
-        let chattingRoom = ChattingRoom(roomID: opponent!.uid, membersUID: member, lastMessage: content, timestamp: date)
+        let chattingRoom = ChattingRoom(roomID: opponentUID, membersUID: member, lastMessage: content, timestamp: date)
         
-        let message = Message(messageID: opponent!.uid, senderUID: currentUser!.uid, content: content, timestamp: date)
+        let message = Message(messageID: opponentUID, senderUID: currentUser!.uid, content: content, timestamp: date)
         
         chattingManager.sendMessage(chattingRoom: chattingRoom, message: message)
     }

@@ -18,6 +18,7 @@ class ChatListViewController: UITableViewController {
         super.viewDidLoad()
         
         //chatList 가져오기
+        //!!!ChattingManager 함수로 만들기!!! -> protocol로 만들면 되지 않을까??
         db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Fail to get ChattingRoom list, \(error)")
@@ -33,6 +34,7 @@ class ChatListViewController: UITableViewController {
                             return nil
                         }
                     })
+                    //???dispatchQueue.main.async 필요한가???
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -47,7 +49,6 @@ class ChatListViewController: UITableViewController {
 //MARK: - TableView
 extension ChatListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(chatList.count)
         return chatList.count
     }
     
@@ -56,5 +57,17 @@ extension ChatListViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell", for: indexPath)
         cell.textLabel?.text = chattingRoom.membersUID.last
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //ChattingViewController로 이동
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChattingViewController") as? ChattingViewController else { return }
+        
+        
+        viewController.opponentUID = chatList[indexPath.row].membersUID.last!
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

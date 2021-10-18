@@ -32,6 +32,7 @@ class FindViewController: UITableViewController {
     }
     
     private func loadFirends() {
+        //!!!ChattingManager 함수로 만들기!!!
         db.collection("users").addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Fail retrieving data from Firestore, \(error)")
@@ -48,6 +49,7 @@ class FindViewController: UITableViewController {
                             return nil
                         }
                     })
+                    //???dispatchQueue.main.async 필요한가???
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -72,7 +74,8 @@ class FindViewController: UITableViewController {
         
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChattingViewController") as? ChattingViewController else { return }
         
-        viewController.opponent = friendList[indexPath.row]
+        //viewController.opponent = friendList[indexPath.row]
+        viewController.opponentUID = friendList[indexPath.row].uid
         
         navigationController?.pushViewController(viewController, animated: true)
     }
