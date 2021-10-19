@@ -12,7 +12,12 @@ class ChattingViewController: UIViewController {
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+            tableView.delegate = self
+        }
+    }
     @IBOutlet weak var inputViewBottomMargin: NSLayoutConstraint!
     
     let currentUser = Auth.auth().currentUser
@@ -42,9 +47,6 @@ class ChattingViewController: UIViewController {
         } else {
             navigationItem.title = opponent?.nickname ?? "사용자 알 수 없음"
         }
-        
-        tableView.dataSource = self
-        tableView.delegate = self
         
         //message list 가져오기
         db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").document(opponentUID).collection("messages").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
@@ -116,9 +118,17 @@ extension ChattingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messageList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath)
-        cell.textLabel?.text = message.content
-        return cell
+        
+        if message.senderUID == currentUser?.uid {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyChattingCell", for: indexPath) as? MyChattingCell else { return UITableViewCell()}
+            cell.myTextLabel.text = message.content
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "YourChattingCell", for: indexPath) as? YourChattingCell else { return UITableViewCell()}
+            cell.yourTextLabel.text = message.content
+            return cell
+        }
+
     }
     
 }

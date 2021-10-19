@@ -9,6 +9,7 @@ import UIKit
 
 class MyChattingCell: UITableViewCell {
 
+    @IBOutlet weak var myTextLabel: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
