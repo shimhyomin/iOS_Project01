@@ -428,7 +428,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-H9-Qph">
-                                <rect key="frame" x="0.0" y="44" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="792"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChattingCell" id="c0F-A0-L7P">
@@ -447,18 +447,20 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0z-dJ-5js">
-                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hi" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1so-Mo-E8g">
-                                        <rect key="frame" x="30" y="18" width="278" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hi" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1so-Mo-E8g">
+                                        <rect key="frame" x="10" y="10" width="313" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="XaK-W0-RB7"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Q0B-v3-Yra">
-                                        <rect key="frame" x="316" y="28" width="71" height="44"/>
+                                        <rect key="frame" x="333" y="8" width="71" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
@@ -470,7 +472,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Rkz-rw-zD7"/>
+                                    <constraint firstItem="1so-Mo-E8g" firstAttribute="top" secondItem="P0z-dJ-5js" secondAttribute="top" constant="10" id="Dzv-Oa-oPb"/>
+                                    <constraint firstItem="1so-Mo-E8g" firstAttribute="leading" secondItem="P0z-dJ-5js" secondAttribute="leading" constant="10" id="bs6-bE-yOz"/>
+                                    <constraint firstItem="Q0B-v3-Yra" firstAttribute="leading" secondItem="1so-Mo-E8g" secondAttribute="trailing" constant="10" id="j7a-Va-ES3"/>
+                                    <constraint firstAttribute="bottom" secondItem="1so-Mo-E8g" secondAttribute="bottom" constant="10" id="uxL-RB-OEf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -488,6 +493,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="nickname" id="WLa-aY-6Y1"/>
                     <connections>
+                        <outlet property="inputViewBottomMargin" destination="el8-eh-6lb" id="g7P-cM-KOJ"/>
                         <outlet property="messageTextView" destination="1so-Mo-E8g" id="wVN-wY-lmc"/>
                         <outlet property="sendButton" destination="Q0B-v3-Yra" id="Rrq-Ym-wOL"/>
                         <outlet property="tableView" destination="PFv-H9-Qph" id="Pe3-IX-i1z"/>

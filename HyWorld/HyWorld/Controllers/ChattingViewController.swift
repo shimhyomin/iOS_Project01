@@ -10,10 +10,10 @@ import Firebase
 
 class ChattingViewController: UIViewController {
     
-
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var inputViewBottomMargin: NSLayoutConstraint!
     
     let currentUser = Auth.auth().currentUser
     var opponent: User?
@@ -26,6 +26,17 @@ class ChattingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //외부 cell register
+        tableView.register(UINib(nibName: "MyChattingCell", bundle: nil), forCellReuseIdentifier: "MyChattingCell")
+        tableView.register(UINib(nibName: "YourChattingCell", bundle: nil), forCellReuseIdentifier: "YourChattingCell")
+        
+        //keyboard observer 설정
+        //키보드가 올라올 때
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWilShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //키보드가 내려갈 때
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWilHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //!!!해결하기 opponent가 없어서 모두 사용자 알 수 없음으로 뜬다!
         if opponent?.uid == currentUser?.uid {
             navigationItem.title = "나"
         } else {
@@ -60,10 +71,34 @@ class ChattingViewController: UIViewController {
         
     }
     
+    @objc func keyboardWilShow(noti: Notification) {
+        let notiInfo = noti.userInfo!
+        let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let height = keyboardFrame.size.height - self.view.safeAreaInsets.bottom
+        
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        UIView.animate(withDuration: animationDuration) {
+            self.inputViewBottomMargin.constant = height
+            //animation할 때 반드시 필요한 코드
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func keyboardWilHide(noti: Notification) {
+        let notiInfo = noti.userInfo!
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        
+        UIView.animate(withDuration: animationDuration) {
+            self.inputViewBottomMargin.constant = 0
+            //animation할 때 반드시 필요한 코드
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         guard let content = messageTextView.text else { return }
         let date = Date().timeIntervalSince1970
-        let member = currentUser?.uid == opponent?.uid ? [currentUser!.uid] : [currentUser!.uid, opponentUID]
+        let member = currentUser?.uid == opponentUID ? [currentUser!.uid] : [currentUser!.uid, opponentUID]
         
         let chattingRoom = ChattingRoom(roomID: opponentUID, membersUID: member, lastMessage: content, timestamp: date)
         
