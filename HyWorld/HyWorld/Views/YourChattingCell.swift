@@ -10,6 +10,8 @@ import UIKit
 class YourChattingCell: UITableViewCell {
 
     @IBOutlet weak var yourTextLabel: UITextView!
+    @IBOutlet weak var dateTextLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

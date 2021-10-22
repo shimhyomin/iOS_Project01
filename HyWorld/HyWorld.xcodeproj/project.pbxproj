@@ -29,6 +29,7 @@
 		C29DDA88270C23A200ED8EB5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */; };
 		C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E296FA2712EBDB004B3B52 /* Chatting.swift */; };
 		C2E296FD2712ECC8004B3B52 /* ChattingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E296FC2712ECC8004B3B52 /* ChattingManager.swift */; };
+		C2FA842627229FD800BFFC36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA842527229FD800BFFC36 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C29DDA87270C23A200ED8EB5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		C2E296FA2712EBDB004B3B52 /* Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatting.swift; sourceTree = "<group>"; };
 		C2E296FC2712ECC8004B3B52 /* ChattingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingManager.swift; sourceTree = "<group>"; };
+		C2FA842527229FD800BFFC36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				C20BF95D270AD43D00D474C1 /* LaunchScreen.storyboard */,
 				C20BF960270AD43D00D474C1 /* Info.plist */,
 				C20BF96D270ADC8B00D474C1 /* GoogleService-Info.plist */,
+				C2FA842527229FD800BFFC36 /* Constants.swift */,
 			);
 			path = HyWorld;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				C29DDA86270C1CE900ED8EB5 /* User.swift in Sources */,
 				C20BF96C270ADA6200D474C1 /* RegisterViewController.swift in Sources */,
 				C22D115F27102FBC0084F4AC /* FindViewController.swift in Sources */,
+				C2FA842627229FD800BFFC36 /* Constants.swift in Sources */,
 				C2220D252711A46200D29BAA /* ChattingViewController.swift in Sources */,
 				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
 				C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */,

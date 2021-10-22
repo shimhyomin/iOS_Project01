@@ -19,7 +19,7 @@ class ChatListViewController: UITableViewController {
         
         //chatList 가져오기
         //!!!ChattingManager 함수로 만들기!!! -> protocol로 만들면 되지 않을까??
-        db.collection("chatting").document(currentUser!.uid).collection("chattingRoom").order(by: "timestamp").addSnapshotListener { querySnapshot, error in
+        db.collection(Constants.DBPath.chattingPath).document(currentUser!.uid).collection(Constants.DBPath.chattingRoomPath).order(by: Constants.ChattingRoom.timestampField, descending: true).addSnapshotListener { querySnapshot, error in
             if let error = error {
                 print("Fail to get ChattingRoom list, \(error)")
             } else {

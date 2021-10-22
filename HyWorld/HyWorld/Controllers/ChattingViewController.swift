@@ -35,6 +35,9 @@ class ChattingViewController: UIViewController {
         tableView.register(UINib(nibName: "MyChattingCell", bundle: nil), forCellReuseIdentifier: "MyChattingCell")
         tableView.register(UINib(nibName: "YourChattingCell", bundle: nil), forCellReuseIdentifier: "YourChattingCell")
         
+        //tableView separator 없애기
+        tableView.separatorStyle = .none
+        
         //keyboard observer 설정
         //키보드가 올라올 때
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWilShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -98,15 +101,13 @@ class ChattingViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
+        //1:1 chatting만을 고려한다.
         guard let content = messageTextView.text else { return }
         let date = Date().timeIntervalSince1970
-        let member = currentUser?.uid == opponentUID ? [currentUser!.uid] : [currentUser!.uid, opponentUID]
         
-        let chattingRoom = ChattingRoom(roomID: opponentUID, membersUID: member, lastMessage: content, timestamp: date)
+        let message = Message(messageID: "", senderUID: currentUser!.uid, content: content, timestamp: date)
         
-        let message = Message(messageID: opponentUID, senderUID: currentUser!.uid, content: content, timestamp: date)
-        
-        chattingManager.sendMessage(chattingRoom: chattingRoom, message: message)
+        chattingManager.sendMessage(opponentUID: opponentUID, message: message)
     }
 }
 
