@@ -76,6 +76,59 @@ class ChattingViewController: UIViewController {
         
     }
     
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        //1:1 chatting만을 고려한다.
+        guard let content = messageTextView.text else { return }
+        let date = Date().timeIntervalSince1970
+        let message = Message(messageID: "", senderUID: currentUser!.uid, content: content, timestamp: date)
+        
+        chattingManager.sendMessage(opponentUID: opponentUID, message: message)
+        messageTextView.text = ""
+    }
+    
+    //TimeInterval을 정해진 DateFormat의 String으로 convert
+    private func timeIntervalToDate(timeInterval: TimeInterval) -> String {
+        let dateFormatter : DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return formatter
+        }()
+        
+        return dateFormatter.string(from: Date(timeIntervalSince1970: timeInterval))
+    }
+}
+
+//MARK: - TableView
+extension ChattingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messageList[indexPath.row]
+        
+        if message.senderUID == currentUser?.uid {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyChattingCell", for: indexPath) as? MyChattingCell else { return UITableViewCell()}
+            cell.myTextLabel.text = message.content
+            cell.dateTextLabel.text = self.timeIntervalToDate(timeInterval: message.timestamp)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "YourChattingCell", for: indexPath) as? YourChattingCell else { return UITableViewCell()}
+            cell.yourTextLabel.text = message.content
+            cell.dateTextLabel.text = self.timeIntervalToDate(timeInterval: message.timestamp)
+            return cell
+        }
+    }
+    
+}
+
+extension ChattingViewController: UITableViewDelegate {
+    //
+}
+
+//MARK: -keyboard
+extension ChattingViewController: UITextViewDelegate {
     @objc func keyboardWilShow(noti: Notification) {
         let notiInfo = noti.userInfo!
         let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
@@ -99,46 +152,4 @@ class ChattingViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    @IBAction func sendButtonPressed(_ sender: UIButton) {
-        //1:1 chatting만을 고려한다.
-        guard let content = messageTextView.text else { return }
-        let date = Date().timeIntervalSince1970
-        
-        let message = Message(messageID: "", senderUID: currentUser!.uid, content: content, timestamp: date)
-        
-        chattingManager.sendMessage(opponentUID: opponentUID, message: message)
-    }
-}
-
-//MARK: - TableView
-extension ChattingViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messageList[indexPath.row]
-        
-        if message.senderUID == currentUser?.uid {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyChattingCell", for: indexPath) as? MyChattingCell else { return UITableViewCell()}
-            cell.myTextLabel.text = message.content
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "YourChattingCell", for: indexPath) as? YourChattingCell else { return UITableViewCell()}
-            cell.yourTextLabel.text = message.content
-            return cell
-        }
-
-    }
-    
-}
-
-extension ChattingViewController: UITableViewDelegate {
-    //
-}
-
-//MARK: -UITableViewDelegate
-extension ChattingViewController: UITextViewDelegate {
-    // send button 누르면 TextView 초기화하기
 }
