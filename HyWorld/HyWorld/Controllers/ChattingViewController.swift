@@ -87,7 +87,7 @@ class ChattingViewController: UIViewController {
     }
     
     //TimeInterval을 정해진 DateFormat의 String으로 convert
-    private func timeIntervalToDate(timeInterval: TimeInterval) -> String {
+    private func timeIntervalToString(timeInterval: TimeInterval) -> String {
         let dateFormatter : DateFormatter = {
             let formatter = DateFormatter()
             formatter.locale = Locale(identifier: "ko_KR")
@@ -111,12 +111,12 @@ extension ChattingViewController: UITableViewDataSource {
         if message.senderUID == currentUser?.uid {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyChattingCell", for: indexPath) as? MyChattingCell else { return UITableViewCell()}
             cell.myTextLabel.text = message.content
-            cell.dateTextLabel.text = self.timeIntervalToDate(timeInterval: message.timestamp)
+            cell.dateTextLabel.text = self.timeIntervalToString(timeInterval: message.timestamp)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "YourChattingCell", for: indexPath) as? YourChattingCell else { return UITableViewCell()}
             cell.yourTextLabel.text = message.content
-            cell.dateTextLabel.text = self.timeIntervalToDate(timeInterval: message.timestamp)
+            cell.dateTextLabel.text = self.timeIntervalToString(timeInterval: message.timestamp)
             return cell
         }
     }

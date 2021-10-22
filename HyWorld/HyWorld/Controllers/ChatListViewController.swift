@@ -17,6 +17,9 @@ class ChatListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //외부 cell register
+        tableView.register(UINib(nibName: "ChattingRoomCell", bundle: nil), forCellReuseIdentifier: "ChattingRoomCell")
+        
         //chatList 가져오기
         //!!!ChattingManager 함수로 만들기!!! -> protocol로 만들면 되지 않을까??
         db.collection(Constants.DBPath.chattingPath).document(currentUser!.uid).collection(Constants.DBPath.chattingRoomPath).order(by: Constants.ChattingRoom.timestampField, descending: true).addSnapshotListener { querySnapshot, error in
@@ -44,6 +47,18 @@ class ChatListViewController: UITableViewController {
         
     }
     
+    //TimeInterval을 정해진 DateFormat의 String으로 convert
+    private func timeIntervalToString(timeInterval: TimeInterval) -> String {
+        let dateFormatter : DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return formatter
+        }()
+        
+        return dateFormatter.string(from: Date(timeIntervalSince1970: timeInterval))
+    }
+    
 }
 
 //MARK: - TableView
@@ -54,8 +69,10 @@ extension ChatListViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chattingRoom = chatList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell", for: indexPath)
-        cell.textLabel?.text = chattingRoom.membersUID.last
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingRoomCell", for: indexPath) as? ChattingRoomCell else { return UITableViewCell() }
+        cell.lastMessageTextLabel.text = chattingRoom.lastMessage
+        cell.dateTextLabel.text = timeIntervalToString(timeInterval: chattingRoom.timestamp)
+        cell.nicknameTextLabel.text = chattingRoom.membersUID.last
         return cell
     }
     

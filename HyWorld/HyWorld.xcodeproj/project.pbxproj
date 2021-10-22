@@ -30,6 +30,8 @@
 		C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E296FA2712EBDB004B3B52 /* Chatting.swift */; };
 		C2E296FD2712ECC8004B3B52 /* ChattingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E296FC2712ECC8004B3B52 /* ChattingManager.swift */; };
 		C2FA842627229FD800BFFC36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA842527229FD800BFFC36 /* Constants.swift */; };
+		C2FA84292722BA6700BFFC36 /* ChattingRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FA84272722BA6700BFFC36 /* ChattingRoomCell.swift */; };
+		C2FA842A2722BA6700BFFC36 /* ChattingRoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2FA84282722BA6700BFFC36 /* ChattingRoomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		C2E296FA2712EBDB004B3B52 /* Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatting.swift; sourceTree = "<group>"; };
 		C2E296FC2712ECC8004B3B52 /* ChattingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingManager.swift; sourceTree = "<group>"; };
 		C2FA842527229FD800BFFC36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2FA84272722BA6700BFFC36 /* ChattingRoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomCell.swift; sourceTree = "<group>"; };
+		C2FA84282722BA6700BFFC36 /* ChattingRoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingRoomCell.xib; sourceTree = "<group>"; };
 		D98C887F85B9078D26C3D2B2 /* Pods_HyWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,8 @@
 				C2935BA0271D787600990E7E /* MyChattingCell.xib */,
 				C2935BA5271D78A800990E7E /* YourChattingCell.swift */,
 				C2935BA6271D78A800990E7E /* YourChattingCell.xib */,
+				C2FA84272722BA6700BFFC36 /* ChattingRoomCell.swift */,
+				C2FA84282722BA6700BFFC36 /* ChattingRoomCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				C20BF96E270ADC8B00D474C1 /* GoogleService-Info.plist in Resources */,
 				C20BF95C270AD43D00D474C1 /* Assets.xcassets in Resources */,
 				C2935BA2271D787600990E7E /* MyChattingCell.xib in Resources */,
+				C2FA842A2722BA6700BFFC36 /* ChattingRoomCell.xib in Resources */,
 				C20BF95A270AD43C00D474C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +301,7 @@
 				C2220D252711A46200D29BAA /* ChattingViewController.swift in Sources */,
 				C20BF953270AD43C00D474C1 /* AppDelegate.swift in Sources */,
 				C2E296FB2712EBDB004B3B52 /* Chatting.swift in Sources */,
+				C2FA84292722BA6700BFFC36 /* ChattingRoomCell.swift in Sources */,
 				C20E2E6A270DA9AB0089A293 /* UserManager.swift in Sources */,
 				C2935BA1271D787600990E7E /* MyChattingCell.swift in Sources */,
 				C2935BA7271D78A800990E7E /* YourChattingCell.swift in Sources */,
